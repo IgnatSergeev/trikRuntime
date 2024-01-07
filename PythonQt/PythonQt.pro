@@ -18,6 +18,8 @@ include(../global.pri)
 
 SUBDIRS += PythonQtCore PythonQtFull
 
+CONFIG += staticlib
+PYTHONQT_STATIC = yes
 QMAKE_CXXFLAGS -= -Werror=pedantic -pedantic-errors
 PythonQtFull.depends += PythonQtCore
 PythonQtCore.subdir = PythonQt/src
