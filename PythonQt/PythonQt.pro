@@ -16,10 +16,10 @@ TEMPLATE = subdirs
 
 include(../global.pri)
 
-SUBDIRS += PythonQtFull
+SUBDIRS += PythonQt
 
 QMAKE_CXXFLAGS -= -Werror=pedantic -pedantic-errors
-PythonQtFull.file = PythonQt/PythonQtFull.pro
+PythonQt.file = PythonQt/PythonQtFull.pro
 
 OTHER_FILES += \
 	$$PWD/runme.sh \
