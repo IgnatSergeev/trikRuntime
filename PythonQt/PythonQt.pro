@@ -16,14 +16,13 @@ TEMPLATE = subdirs
 
 include(../global.pri)
 
-SUBDIRS += PythonQt
+SUBDIRS += PythonQtCore PythonQtFull
 
 QMAKE_CXXFLAGS -= -Werror=pedantic -pedantic-errors
-PythonQt.file = PythonQt/PythonQtFull.pro
+PythonQtFull.depends += PythonQtCore
+PythonQtCore.subdir = PythonQt/src
+PythonQtFull.file = PythonQtFull.pro
 
 OTHER_FILES += \
 	$$PWD/runme.sh \
 	$$PWD/trikControl_export.h \
-
-PYTHONQTALL_CONFIG *= PythonQtCore
-QT += widgets
