@@ -12,9 +12,18 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+TEMPLATE = subdirs
+
 include(../global.pri)
 
+SUBDIRS += PythonQtFull
+
 QMAKE_CXXFLAGS -= -Werror=pedantic -pedantic-errors
+PythonQtFull.file = PythonQt/PythonQtFull.pro
+
+OTHER_FILES += \
+	$$PWD/runme.sh \
+	$$PWD/trikControl_export.h \
+
 PYTHONQTALL_CONFIG *= PythonQtCore
 QT += widgets
-include(PythonQt/extensions/PythonQt_QtAll/PythonQt_QtAll.pro)
